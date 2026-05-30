@@ -1,0 +1,12 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração de compra protegida</title>
+  <desc id="desc">Escudo com cadeado para representar segurança no checkout.</desc>
+  <rect width="640" height="420" rx="24" fill="#ECFDF5"/>
+  <rect x="50" y="56" width="540" height="308" rx="20" fill="white"/>
+  <path d="M320 98L430 144V218C430 286 386 334 320 352C254 334 210 286 210 218V144L320 98Z" fill="#A7F3D0"/>
+  <path d="M320 122L404 157V218C404 271 372 309 320 325C268 309 236 271 236 218V157L320 122Z" fill="#34D399"/>
+  <rect x="282" y="196" width="76" height="78" rx="12" fill="white"/>
+  <path d="M301 196V179C301 168 309 160 320 160C331 160 339 168 339 179V196" stroke="white" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="320" cy="232" r="10" fill="#10B981"/>
+  <rect x="316" y="232" width="8" height="22" rx="4" fill="#10B981"/>
+</svg>

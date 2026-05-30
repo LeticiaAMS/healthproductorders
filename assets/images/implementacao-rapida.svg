@@ -1,0 +1,14 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração de implementação rápida</title>
+  <desc id="desc">Interface com checklist e cronograma curto para representar início rápido.</desc>
+  <rect width="640" height="420" rx="24" fill="#EAF4FF"/>
+  <rect x="52" y="56" width="536" height="308" rx="20" fill="white"/>
+  <rect x="90" y="100" width="220" height="20" rx="10" fill="#D9E7FF"/>
+  <rect x="90" y="136" width="160" height="14" rx="7" fill="#E7EFFD"/>
+  <rect x="90" y="188" width="300" height="14" rx="7" fill="#E7EFFD"/>
+  <rect x="90" y="228" width="260" height="14" rx="7" fill="#E7EFFD"/>
+  <circle cx="432" cy="200" r="82" fill="#DDF9EA"/>
+  <path d="M398 198L425 225L473 173" stroke="#16A34A" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="90" y="176" width="20" height="20" rx="6" fill="#86EFAC"/>
+  <rect x="90" y="216" width="20" height="20" rx="6" fill="#86EFAC"/>
+</svg>

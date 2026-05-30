@@ -1,0 +1,15 @@
+<svg width="640" height="420" viewBox="0 0 640 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração de foco em resultado prático</title>
+  <desc id="desc">Alvo com barras de crescimento para representar progresso consistente.</desc>
+  <rect width="640" height="420" rx="24" fill="#F5F3FF"/>
+  <rect x="54" y="58" width="532" height="304" rx="20" fill="white"/>
+  <circle cx="210" cy="210" r="104" fill="#E9D5FF"/>
+  <circle cx="210" cy="210" r="74" fill="#D8B4FE"/>
+  <circle cx="210" cy="210" r="42" fill="#A78BFA"/>
+  <circle cx="210" cy="210" r="16" fill="#7C3AED"/>
+  <path d="M210 210L334 142" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <polygon points="343,137 328,160 317,134" fill="#334155"/>
+  <rect x="380" y="256" width="38" height="72" rx="8" fill="#C4B5FD"/>
+  <rect x="430" y="216" width="38" height="112" rx="8" fill="#A78BFA"/>
+  <rect x="480" y="174" width="38" height="154" rx="8" fill="#8B5CF6"/>
+</svg>

@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Filipe Augusto | Inteligência em Tráfego & Performance Digital</title>
+    <meta
+      name="description"
+      content="Plataforma institucional de Filipe Augusto da Silva, consultor independente de marketing de performance, aquisição de tráfego pago e inteligência de mídia digital."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #070a13;
+        --card-bg: rgba(13, 20, 38, 0.6);
+        --card-hover-bg: rgba(20, 30, 58, 0.85);
+        --border: rgba(255, 255, 255, 0.08);
+        --border-hover: rgba(56, 189, 248, 0.35);
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --accent: #38bdf8; /* Sky blue */
+        --accent-gradient: linear-gradient(135deg, #38bdf8, #2dd4bf);
+        --accent-glow: rgba(56, 189, 248, 0.15);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      html, body {
+        width: 100%;
+        overflow-x: hidden;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: var(--bg);
+        background-image: 
+          radial-gradient(circle at 50% 0%, rgba(24, 37, 72, 0.45) 0%, transparent 50%),
+          radial-gradient(circle at 100% 60%, rgba(13, 148, 136, 0.08) 0%, transparent 40%);
+        color: var(--text-primary);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .container {
+        width: min(1200px, 90%);
+        margin: 0 auto;
+      }
+
+      /* Glow decoration */
+      .glow-spot {
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(56, 189, 248, 0.08) 0%, transparent 70%);
+        top: 20%;
+        left: -100px;
+        z-index: -1;
+        pointer-events: none;
+      }
+
+      /* Navbar styling */
+      header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(7, 10, 19, 0.8);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+        padding: 16px 0;
+        transition: all 0.3s ease;
+      }
+
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: 'Outfit', sans-serif;
+        font-size: 20px;
+        font-weight: 800;
+        letter-spacing: -0.5px;
+        text-decoration: none;
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .logo-dot {
+        width: 8px;
+        height: 8px;
+        background: #2dd4bf;
+        border-radius: 50%;
+        display: inline-block;
+        box-shadow: 0 0 10px #2dd4bf;
+      }
+
+      nav {
+        display: flex;
+        gap: 24px;
+      }
+
+      nav a {
+        color: var(--text-secondary);
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 500;
+        transition: all 0.2s ease;
+        padding: 6px 12px;
+        border-radius: 6px;
+      }
+
+      nav a:hover {
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 100px 0 60px;
+        position: relative;
+        text-align: center;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(56, 189, 248, 0.08);
+        border: 1px solid rgba(56, 189, 248, 0.2);
+        color: var(--accent);
+        border-radius: 999px;
+        padding: 6px 16px;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 24px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        animation: pulseGlow 3s infinite ease-in-out;
+      }
+
+      @keyframes pulseGlow {
+        0%, 100% { box-shadow: 0 0 5px rgba(56, 189, 248, 0.1); }
+        50% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.3); }
+      }
+
+      h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(32px, 5.5vw, 62px);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: -1.5px;
+        max-width: 950px;
+        margin: 0 auto 20px;
+      }
+
+      h1 span {
+        background: var(--accent-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      .subtitle {
+        font-size: clamp(16px, 2.5vw, 20px);
+        color: var(--text-secondary);
+        max-width: 800px;
+        margin: 0 auto 40px;
+        font-weight: 400;
+      }
+
+      .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: var(--accent-gradient);
+        color: #030712;
+        text-decoration: none;
+        padding: 14px 28px;
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 15px;
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        box-shadow: 0 4px 20px rgba(56, 189, 248, 0.25);
+      }
+
+      .cta-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 28px rgba(56, 189, 248, 0.45);
+      }
+
+      .cta-btn svg {
+        transition: transform 0.2s ease;
+      }
+
+      .cta-btn:hover svg {
+        transform: translateX(4px);
+      }
+
+      /* Sections General Layout */
+      .section-title {
+        font-family: 'Outfit', sans-serif;
+        font-size: clamp(24px, 3.5vw, 36px);
+        font-weight: 700;
+        letter-spacing: -0.5px;
+        margin-bottom: 12px;
+      }
+
+      .section-desc {
+        color: var(--text-secondary);
+        margin-bottom: 40px;
+        font-size: 16px;
+        max-width: 700px;
+      }
+
+      .section-divider {
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--border), transparent);
+        margin: 60px 0;
+      }
+
+      /* Glassmorphic Grid Cards */
+      .glass-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 32px;
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .glass-card:hover {
+        background: var(--card-hover-bg);
+        border-color: var(--border-hover);
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(56, 189, 248, 0.05);
+      }
+
+      .glass-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: var(--accent-gradient);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .glass-card:hover::before {
+        opacity: 1;
+      }
+
+      /* Icons styling */
+      .card-icon {
+        width: 48px;
+        height: 48px;
+        background: rgba(56, 189, 248, 0.1);
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--accent);
+        margin-bottom: 20px;
+      }
+
+      /* Specific Sections Styling */
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 32px;
+        align-items: stretch;
+      }
+
+      .about-info-item {
+        margin-bottom: 20px;
+      }
+
+      .about-info-item:last-child {
+        margin-bottom: 0;
+      }
+
+      .info-label {
+        font-size: 12px;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin-bottom: 4px;
+        display: block;
+      }
+
+      .info-val {
+        font-size: 16px;
+        color: var(--text-primary);
+        font-weight: 600;
+      }
+
+      .info-val a {
+        color: var(--accent);
+        text-decoration: none;
+        border-bottom: 1px dotted var(--accent);
+        transition: color 0.2s ease;
+      }
+
+      .info-val a:hover {
+        color: #2dd4bf;
+      }
+
+      /* Relations & Performance */
+      .grid-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+      }
+
+      .model-pill {
+        display: inline-block;
+        background: rgba(45, 212, 191, 0.1);
+        border: 1px solid rgba(45, 212, 191, 0.2);
+        color: #2dd4bf;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 4px 10px;
+        border-radius: 6px;
+        margin-top: 10px;
+      }
+
+      /* Split Layout (Responsibility) */
+      .split-layout {
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 40px;
+        align-items: center;
+      }
+
+      .split-text h3 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 24px;
+        margin-bottom: 16px;
+        color: var(--text-primary);
+      }
+
+      .split-text p {
+        color: var(--text-secondary);
+        margin-bottom: 20px;
+        font-size: 15px;
+      }
+
+      .trust-list {
+        list-style: none;
+      }
+
+      .trust-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        margin-bottom: 14px;
+        color: var(--text-secondary);
+        font-size: 14px;
+      }
+
+      .trust-list li svg {
+        color: #2dd4bf;
+        flex-shrink: 0;
+        margin-top: 3px;
+      }
+
+      .warning-card {
+        background: rgba(239, 68, 68, 0.03);
+        border: 1px solid rgba(239, 68, 68, 0.15);
+        border-left: 4px solid #ef4444;
+        border-radius: 12px;
+        padding: 24px;
+        margin-top: 24px;
+      }
+
+      .warning-card h4 {
+        color: #fca5a5;
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 6px;
+        font-family: 'Outfit', sans-serif;
+      }
+
+      .warning-card p {
+        font-size: 13.5px;
+        color: #f87171;
+        line-height: 1.5;
+      }
+
+      /* Privacy & Modal trigger */
+      .privacy-box {
+        background: rgba(13, 20, 38, 0.35);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 30px;
+      }
+
+      .privacy-box h3 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 20px;
+        margin-bottom: 12px;
+      }
+
+      .privacy-box p {
+        color: var(--text-secondary);
+        font-size: 14px;
+        margin-bottom: 16px;
+      }
+
+      /* Footer */
+      footer {
+        padding: 60px 0 40px;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 13px;
+        background: #04060c;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-brand {
+        max-width: 400px;
+      }
+
+      .footer-brand p {
+        margin-top: 12px;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+
+      .footer-links-title {
+        color: var(--text-secondary);
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 16px;
+      }
+
+      .footer-links-list {
+        list-style: none;
+      }
+
+      .footer-links-list li {
+        margin-bottom: 10px;
+      }
+
+      .footer-links-list a {
+        color: var(--text-muted);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-links-list a:hover {
+        color: var(--accent);
+      }
+
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.04);
+        padding-top: 24px;
+      }
+
+      /* Responsive styling */
+      @media (max-width: 968px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-3 {
+          grid-template-columns: 1fr;
+        }
+
+        .split-layout {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          gap: 30px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        header {
+          padding: 12px 0;
+        }
+
+        nav {
+          display: none; /* Can be expanded with mobile menu if requested, keeping it simple for compliance */
+        }
+        
+        .hero {
+          padding: 60px 0 40px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background glow spots -->
+    <div class="glow-spot"></div>
+
+    <!-- Header Navigation -->
+    <header>
+      <div class="container nav-container">
+        <a href="#" class="logo">
+          FILIPE AUGUSTO <span class="logo-dot"></span>
+        </a>
+        <nav>
+          <a href="#atuacao">Atuação</a>
+          <a href="#parcerias">Parcerias</a>
+          <a href="#responsabilidade">Fulfillment</a>
+          <a href="#compliance">Conformidade</a>
+          <a href="#privacidade">Privacidade</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section (1. TÍTULO PRINCIPAL E INTRODUÇÃO) -->
+      <section class="hero container">
+        <span class="badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" style="margin-right: 2px;">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+          </svg>
+          Operação Auditada & Em Conformidade
+        </span>
+        <h1>
+          Inteligência em <span>Aquisição de Tráfego</span> e Otimização de Performance Digital
+        </h1>
+        <p class="subtitle">
+          Atuamos no planejamento estruturado, criação avançada e gestão de infraestruturas de anúncios online para geração contínua de leads qualificados e impulsionamento de vendas digitais de alta escala.
+        </p>
+        <a href="#atuacao" class="cta-btn">
+          Conhecer Operação
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- About Section (2. IDENTIDADE E ESCOPO DA ATIVIDADE) -->
+      <section id="atuacao" class="container">
+        <h2 class="section-title">Identidade Operacional & Escopo</h2>
+        <p class="section-desc">Estrutura organizacional fundamentada na transparência legal, autonomia operacional e conformidade nas redes de publicidade digital.</p>
+        
+        <div class="about-grid">
+          <!-- Text Box -->
+          <div class="glass-card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin-bottom: 16px;">Prestação de Serviços Autônomo</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 16px; font-size: 15px;">
+              A operação conduzida por <strong>Filipe Augusto da Silva</strong> é devidamente classificada como um <strong>Prestador de Serviços Autônomo / Profissional Independente de Publicidade</strong>, baseada geograficamente em Portugal.
+            </p>
+            <p style="color: var(--text-secondary); font-size: 15px;">
+              Nossa operação financia inteiramente e gerencia de forma 100% autônoma as suas campanhas de publicidade em plataformas globais de tráfego pago (como Google Ads e Meta Ads). Asseguramos que todos os funis de veiculação e criativos sejam estruturados sob o mais alto rigor técnico e respeitem de forma estrita as diretrizes de compliance de cada rede publicitária parceira.
+            </p>
+          </div>
+
+          <!-- Metadata Box -->
+          <div class="glass-card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div class="card-icon">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
+              </div>
+              <h3 style="font-family: 'Outfit', sans-serif; font-size: 22px; margin-bottom: 16px;">Dados Verificados</h3>
+            </div>
+            
+            <div style="margin-top: 20px;">
+              <div class="about-info-item">
+                <span class="info-label">Operador Responsável</span>
+                <span class="info-val">Filipe Augusto da Silva</span>
+              </div>
+              <div class="about-info-item" style="margin-top: 16px;">
+                <span class="info-label">E-mail de Contato Comercial</span>
+                <span class="info-val"><a href="mailto:filipeaugusto6543@gmail.com">filipeaugusto6543@gmail.com</a></span>
+              </div>
+              <div class="about-info-item" style="margin-top: 16px;">
+                <span class="info-label">Localização Principal</span>
+                <span class="info-val">Portugal</span>
+              </div>
+              <div class="about-info-item" style="margin-top: 16px;">
+                <span class="info-label">Classificação da Atividade</span>
+                <span class="info-val">Consultoria de Mídia & Marketing de Performance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Relations Section (3. RELAÇÕES COMERCIAIS) -->
+      <section id="parcerias" class="container">
+        <h2 class="section-title">Parcerias Estratégicas & Distribuição de Mídia</h2>
+        <p class="section-desc">Entenda nosso arranjo comercial de arbitragem de mídia e parcerias com plataformas tecnológicas integradoras.</p>
+        
+        <div class="grid-3">
+          <!-- Card 1 -->
+          <div class="glass-card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 18px; margin-bottom: 12px;">Integração Tecnológica</h3>
+            <p style="color: var(--text-secondary); font-size: 14px;">
+              Nossas campanhas publicitárias conectam-se de forma direta com <strong>Hubs de Integração Comercial e Plataformas de E-commerce de alta tecnologia (como a Smart ADV)</strong>. Esses hubs mantêm e licenciam o ambiente técnico, segurança dos checkouts e transações financeiras.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="glass-card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 18px; margin-bottom: 12px;">Divisão Operacional</h3>
+            <p style="color: var(--text-secondary); font-size: 14px;">
+              Os hubs e plataformas integradoras cuidam da infraestrutura sistêmica pesada. A nossa operação foca estritamente na inteligência publicitária, investindo em testes de criativos e atração de tráfego altamente qualificado para as soluções integradas.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="glass-card">
+            <div class="card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="16"></line>
+                <line x1="8" y1="12" x2="16" y2="12"></line>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 18px; margin-bottom: 12px;">Performance e Resultados</h3>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 8px;">
+              Nosso modelo operacional baseia-se puramente em <strong>Performance sobre Resultados Comerciais (CPA / CPL)</strong>. O faturamento ocorre exclusivamente a partir da validação de metas e aquisição de clientes bem-sucedidas nos hubs parceiros.
+            </p>
+            <span class="model-pill">Modelo CPA/CPL Homologado</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Fulfillment Section (4. RESPONSABILIDADE POR VENDA, ENTREGA E SUPORTE) -->
+      <section id="responsabilidade" class="container">
+        <div class="split-layout">
+          <div class="split-text">
+            <h2 class="section-title">Fulfillment & Divisão de Responsabilidades</h2>
+            <p class="section-desc" style="margin-bottom: 24px;">Transparência absoluta quanto à separação dos papéis publicitários e logísticos aos nossos visitantes.</p>
+            
+            <h3>Atuação em Inteligência de Tráfego</h3>
+            <p>
+              A operação conduzida por <strong>Filipe Augusto da Silva</strong> concentra-se de forma exclusiva em inteligência de mídia, análise estatística e veiculação técnica de publicidade. Não possuímos estoques físicos, não realizamos manufatura própria, empacotamento ou entrega postal de mercadorias.
+            </p>
+            
+            <ul class="trust-list">
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Processamento Seguro:</strong> Todas as cobranças, emissão de faturas e processamento de pagamentos são geridos de forma estanque em servidores criptografados de parceiros institucionais credenciados.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Logística (Fulfillment):</strong> A entrega das mercadorias físicas, o frete, desembaraços aduaneiros e a garantia técnica dos produtos competem de forma integral e exclusiva ao detentor de marca e sua plataforma integradora de fulfillment.</span>
+              </li>
+              <li>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+                <span><strong>Suporte ao Consumidor:</strong> O atendimento pós-venda para rastreio de pacotes, reembolsos legais ou dúvidas sobre a utilidade do produto é provido diretamente pelos canais oficiais de suporte do fabricante informados nos recibos de compra.</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Legal/Warning Box -->
+          <div class="glass-card">
+            <div class="card-icon" style="background: rgba(239, 68, 68, 0.1); color: #ef4444;">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                <line x1="12" y1="9" x2="12" y2="13"></line>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+              </svg>
+            </div>
+            <h3 style="font-family: 'Outfit', sans-serif; font-size: 20px; margin-bottom: 12px;">Isenção de Responsabilidade Logística</h3>
+            <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 14px;">
+              Como uma agência autônoma de mídia digital, não temos controle e nem responsabilidade civil, jurídica ou financeira sobre a postagem, qualidade fabril, durabilidade ou eficácia dos produtos físicos finais.
+            </p>
+            <p style="color: var(--text-secondary); font-size: 14px;">
+              Recomendamos aos usuários finais que analisem com plena atenção todas as informações legais, políticas de reembolso e dados de contato do fabricante contidos no rodapé do checkout antes de fechar qualquer transação comercial.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Compliance Section (5. AVISO DE TRANSPARÊNCIA) -->
+      <section id="compliance" class="container">
+        <h2 class="section-title">Conformidade de Links & Propriedade Intelectual</h2>
+        <p class="section-desc">Parâmetros éticos de atuação no direcionamento seguro de links de publicidade e uso de propriedade intelectual.</p>
+        
+        <div class="glass-card">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 32px;">
+            <div>
+              <h3 style="font-family: 'Outfit', sans-serif; font-size: 20px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                </svg>
+                Direcionamento Seguro de Tráfego
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                Nossos anúncios direcionam os consumidores de forma inteiramente transparente para os servidores oficiais e checkouts seguros providos exclusivamente por plataformas integradoras homologadas. Não fazemos uso de técnicas de cloaking, redirecionamentos fraudulentos ou links que ocultem a verdadeira natureza do produto comercializado de nossos visitantes ou de ferramentas de verificação de política.
+              </p>
+            </div>
+            
+            <div>
+              <h3 style="font-family: 'Outfit', sans-serif; font-size: 20px; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                </svg>
+                Uso Autorizado de Marcas Registradas
+              </h3>
+              <p style="color: var(--text-secondary); font-size: 14px; line-height: 1.6;">
+                Os nomes de produtos, slogans, embalagens e logotipos de marcas exibidos nas páginas promocionais ou criativos pertencem estritamente aos seus proprietários de propriedade intelectual originais. A exposição destes itens publicitários ocorre de forma estrita às diretrizes promocionais liberadas e incentivadas pelos acordos de comercialização vigentes com as nossas plataformas integradoras licenciadas.
+              </p>
+            </div>
+          </div>
+
+          <div class="warning-card">
+            <h4>Aviso de Isenção de Ganhos e Resultados</h4>
+            <p>
+              Os resultados decorrentes da utilização de métodos descritos em campanhas podem flutuar amplamente de acordo com a individualidade biológica, dedicação, perfil financeiro e capacidade técnica de execução de cada usuário. Esta operação não garante ganhos fáceis, cura de patologias clínicas, emagrecimento sem esforço ou qualquer tipo de promessa de retorno rápido. A publicidade é de natureza estritamente informativa.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div class="section-divider"></div>
+
+      <!-- Privacy Section (6. POLÍTICA DE PRIVACIDADE E TERMOS DE USO) -->
+      <section id="privacidade" class="container" style="margin-bottom: 80px;">
+        <h2 class="section-title">Políticas de Privacidade & Termos de Uso</h2>
+        <p class="section-desc">Segurança de dados do usuário em plena conformidade com as diretrizes internacionais da UE e do Brasil.</p>
+        
+        <div class="privacy-box">
+          <h3 style="color: var(--text-primary); font-weight: 700;">Compromisso de Proteção de Dados (GDPR & LGPD)</h3>
+          <p style="margin-top: 14px; line-height: 1.7;">
+            Este website é de natureza estritamente institucional, voltado à divulgação corporativa e transparência de escopo operacional de Filipe Augusto da Silva. Temos um comprometimento absoluto com a integridade digital e privacidade dos nossos visitantes e dados que eventualmente possam ser processados em virtude de análises analíticas básicas de tráfego.
+          </p>
+          
+          <h4 style="color: var(--accent); margin-top: 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">1. Processamento e Coleta de Dados</h4>
+          <p style="margin-top: 6px; font-size: 14.5px;">
+            Não realizamos a captura, venda ou partilha sistemática de dados de identificação pessoal direta dos usuários em nosso domínio institucional. Quaisquer ferramentas de metadados agregados instaladas (como tags do Google Analytics) visam unicamente compreender métricas geográficas básicas de navegação e comportamento anônimo na página para otimizações técnicas de servidores e performance de layout.
+          </p>
+
+          <h4 style="color: var(--accent); margin-top: 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">2. Criptografia & Proteção Física</h4>
+          <p style="margin-top: 6px; font-size: 14.5px;">
+            Qualquer tráfego de dados neste portal é protegido utilizando o protocolo HTTPS e criptografado de ponta a ponta com certificados de segurança SSL robustos. Isso garante que sua conexão esteja inteiramente imune a interceptações maliciosas de tráfego de terceiros enquanto navega em nossos informativos de conformidade.
+          </p>
+
+          <h4 style="color: var(--accent); margin-top: 20px; font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">3. Direitos Legais do Titular dos Dados</h4>
+          <p style="margin-top: 6px; font-size: 14.5px;">
+            Em estrito cumprimento do Regulamento Geral de Proteção de Dados (GDPR / Regulamento (UE) 2016/679) da União Europeia, vigente em Portugal, e da Lei Geral de Proteção de Dados (LGPD) no Brasil, garantimos aos titulares de dados todos os seus direitos de consulta, retificação, limitação ou eliminação de registros no âmbito desta infraestrutura. Para qualquer manifestação ou solicitação relacionada aos seus dados, o canal oficial de contato direto e exclusivo é através do e-mail: <a href="mailto:filipeaugusto6543@gmail.com" style="color: var(--accent); text-decoration: none; border-bottom: 1px dotted var(--accent);">filipeaugusto6543@gmail.com</a>.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo" style="font-size: 18px;">
+            FILIPE AUGUSTO <span class="logo-dot"></span>
+          </a>
+          <p>
+            Inteligência de tráfego pago, modelagem de funis de performance digital e aquisição estratégica de tráfego em plena conformidade regulatória.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="footer-links-title">Políticas</h4>
+          <ul class="footer-links-list">
+            <li><a href="#atuacao">Identidade Comercial</a></li>
+            <li><a href="#parcerias">Termos de Parceria</a></li>
+            <li><a href="#privacidade">Privacidade (GDPR)</a></li>
+            <li><a href="#compliance">Políticas de Anúncios</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-links-title">Operação</h4>
+          <p style="margin-bottom: 8px;"><strong>Operador:</strong> Filipe Augusto da Silva</p>
+          <p style="margin-bottom: 8px;"><strong>Contato:</strong> <a href="mailto:filipeaugusto6543@gmail.com" style="color: var(--text-secondary); text-decoration: none;">filipeaugusto6543@gmail.com</a></p>
+          <p><strong>Região:</strong> Portugal (EU)</p>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p>&copy; 2026 Filipe Augusto da Silva. Todos os direitos reservados. Licenciado para Distribuição Digital.</p>
+        <p style="font-size: 11px; color: var(--text-muted);">Esta página tem fins puramente informativos e de compliance.</p>
+      </div>
+    </footer>
+  </body>
+</html>
